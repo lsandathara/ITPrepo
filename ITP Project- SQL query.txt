@@ -1,0 +1,399 @@
+
+
+CREATE TABLE `accpay` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `reserveId` varchar(45) DEFAULT NULL,
+  `date` varchar(45) DEFAULT NULL,
+  `RID` varchar(45) DEFAULT NULL,
+  `category` varchar(45) DEFAULT NULL,
+  `days` varchar(45) DEFAULT NULL,
+  `advance` varchar(45) DEFAULT NULL,
+  `restaurant` varchar(45) DEFAULT NULL,
+  `total` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fname` varchar(45) DEFAULT NULL,
+  `lname` varchar(45) DEFAULT NULL,
+  `contact` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+INSERT INTO `kfr`.`admin`
+(`id`,
+`fname`,
+`lname`,
+`contact`,
+`email`,
+`password`)
+VALUES
+(
+{1: INT},
+{Mahen: VARCHAR},
+{Bandara: VARCHAR},
+{0718856942: VARCHAR},
+{mahenB@gmail.com: VARCHAR},
+{mahen: VARCHAR}
+);
+
+
+
+CREATE TABLE `application` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `nic` varchar(45) DEFAULT NULL,
+  `contact` varchar(45) DEFAULT NULL,
+  `mail` varchar(45) DEFAULT NULL,
+  `gender` varchar(45) DEFAULT NULL,
+  `edu_qualifi` varchar(45) DEFAULT NULL,
+  `job_exp` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `basicneeds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `inquiry` varchar(45) NOT NULL,
+  `empid` varchar(500) DEFAULT NULL,
+  `iDate` varchar(500) DEFAULT NULL,
+  `complaint` varchar(1000) DEFAULT NULL,
+  `department` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+CREATE TABLE `bills` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `month` varchar(45) DEFAULT NULL,
+  `water` float DEFAULT NULL,
+  `tel_1` float DEFAULT NULL,
+  `tel_2` float DEFAULT NULL,
+  `electricity` float DEFAULT NULL,
+  `satellite` float DEFAULT NULL,
+  `total` float DEFAULT NULL,
+  `pay_day` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `catering` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `contactNumber` varchar(45) DEFAULT NULL,
+  `date` varchar(45) DEFAULT NULL,
+  `numberOfPeople` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `menuID` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `consumption` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` varchar(45) DEFAULT NULL,
+  `staffid` varchar(45) DEFAULT NULL,
+  `department` varchar(45) DEFAULT NULL,
+  `description` varchar(45) DEFAULT NULL,
+  `quantity` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `dinning_table` (
+  `id_dinning_table` int(11) NOT NULL,
+  `status_dinning_table` varchar(45) DEFAULT 'available',
+  PRIMARY KEY (`id_dinning_table`)
+) 
+
+
+
+CREATE TABLE `emp` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `empId` varchar(45) DEFAULT NULL,
+  `empName` varchar(45) DEFAULT NULL,
+  `basicSalary` double DEFAULT NULL,
+  `otRate` double DEFAULT NULL,
+  `otHours` int(11) DEFAULT NULL,
+  `bonusPayment` double DEFAULT NULL,
+  `panaltyPayment` double DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `employee` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `empid` varchar(45) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `nic` varchar(45) DEFAULT NULL,
+  `contact` varchar(45) DEFAULT NULL,
+  `mail` varchar(45) DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `job_title` varchar(100) DEFAULT NULL,
+  `salary` varchar(100) DEFAULT NULL,
+  `department` varchar(100) DEFAULT NULL,
+  `appointmentDate` varchar(100) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `empsalary` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `empId` varchar(45) DEFAULT NULL,
+  `tottalSalary` float DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `enquiries` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `no_of_persons` int(11) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `contact_no` varchar(45) NOT NULL,
+  `description` varchar(455) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `event` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` varchar(45) DEFAULT NULL,
+  `type` varchar(45) DEFAULT 'Wedding',
+  `nic` varchar(45) DEFAULT NULL,
+  `client_first_name` varchar(45) DEFAULT NULL,
+  `client_last_name` varchar(45) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `post_code` varchar(45) DEFAULT NULL,
+  `Tel_no` varchar(45) DEFAULT NULL,
+  `mobile_no` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `no_of_people` int(45) DEFAULT NULL,
+  `special_requests` varchar(455) DEFAULT NULL,
+  `resort_charges` double DEFAULT NULL,
+  `accumulative_tax` double DEFAULT NULL,
+  `total` double DEFAULT NULL,
+  `prepayment` double DEFAULT NULL,
+  `payment_status` varchar(45) DEFAULT 'NOT PAID',
+  `payment_date` varchar(45) DEFAULT NULL,
+  `appetizer` varchar(45) DEFAULT NULL,
+  `soup` varchar(45) DEFAULT NULL,
+  `rice1` varchar(45) DEFAULT NULL,
+  `rice2` varchar(45) DEFAULT NULL,
+  `noodles` varchar(45) DEFAULT NULL,
+  `fish` varchar(45) DEFAULT NULL,
+  `chicken` varchar(45) DEFAULT NULL,
+  `vegetable1` varchar(45) DEFAULT NULL,
+  `vegetable2` varchar(45) DEFAULT NULL,
+  `vegetable3` varchar(45) DEFAULT NULL,
+  `dessert1` varchar(45) DEFAULT NULL,
+  `dessert2` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `handle` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `address` varchar(45) NOT NULL,
+  `nic` varchar(45) NOT NULL,
+  `contact` varchar(45) NOT NULL,
+  `mail` varchar(45) NOT NULL,
+  `intDate` varchar(45) NOT NULL,
+  `intVenue` varchar(45) NOT NULL,
+  `tDate` varchar(45) NOT NULL,
+  `tVenue` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `ordertable` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` varchar(45) DEFAULT NULL,
+  `staffid` varchar(45) DEFAULT NULL,
+  `department` varchar(45) DEFAULT NULL,
+  `description` varchar(45) DEFAULT NULL,
+  `quantity` double DEFAULT NULL,
+  `unit` float DEFAULT NULL,
+  `total` float DEFAULT NULL,
+  `type` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `paymentinfo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `iDate` varchar(45) DEFAULT NULL,
+  `vendorId` varchar(45) DEFAULT NULL,
+  `paidAmount` float DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `remainingpayment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `vendorId` varchar(45) DEFAULT NULL,
+  `remainingAmount` float DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `reservation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `reserveID` varchar(45) DEFAULT NULL,
+  `RID` varchar(45) DEFAULT NULL,
+  `category` varchar(45) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `phone` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `checkIn` varchar(45) DEFAULT NULL,
+  `checkOut` varchar(45) DEFAULT NULL,
+  `days` varchar(45) DEFAULT NULL,
+  `adults` varchar(45) DEFAULT NULL,
+  `children` varchar(45) DEFAULT NULL,
+  `advance` varchar(45) DEFAULT NULL,
+  `slipNo` varchar(45) DEFAULT NULL,
+  `options` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `restpay` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` varchar(45) DEFAULT NULL,
+  `reserveId` varchar(45) DEFAULT NULL,
+  `mID` varchar(45) DEFAULT NULL,
+  `total` float DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)
+
+
+
+CREATE TABLE `rooms` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `RID` varchar(45) DEFAULT NULL,
+  `category` varchar(45) DEFAULT NULL,
+  `price` varchar(45) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `options` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `salarydetails` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `empid` varchar(500) DEFAULT NULL,
+  `salary` varchar(500) DEFAULT NULL,
+  `otRates` varchar(1000) DEFAULT NULL,
+  `otHours` varchar(450) DEFAULT NULL,
+  `bonusPayment` varchar(450) DEFAULT NULL,
+  `panaltyPayment` varchar(450) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `shift` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `empid` varchar(45) DEFAULT NULL,
+  `s_time` varchar(45) DEFAULT NULL,
+  `dept` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `stock` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` varchar(45) DEFAULT NULL,
+  `description` varchar(70) DEFAULT NULL,
+  `vendor` varchar(45) DEFAULT NULL,
+  `invoiceNum` varchar(45) DEFAULT NULL,
+  `recieved` float DEFAULT NULL,
+  `weekCon` float DEFAULT NULL,
+  `current` float DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `tablereservation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tableId` varchar(45) NOT NULL,
+  `menuId` varchar(45) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `date` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `contactNo` varchar(45) NOT NULL,
+  `noOfPeople` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `takeaway` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `numberOfPackets` varchar(45) NOT NULL,
+  `contactNumber` varchar(45) NOT NULL,
+  `email` varchar(105) NOT NULL,
+  `menuID` varchar(45) NOT NULL,
+  `date` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `userregistration` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fname` varchar(45) DEFAULT NULL,
+  `lname` varchar(45) DEFAULT NULL,
+  `address` varchar(200) DEFAULT NULL,
+  `phone` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `sex` varchar(10) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
+CREATE TABLE `vendorpayment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `invoice` varchar(45) DEFAULT NULL,
+  `iDate` varchar(45) DEFAULT NULL,
+  `vendor` varchar(45) DEFAULT NULL,
+  `vendorId` varchar(45) DEFAULT NULL,
+  `department` varchar(45) DEFAULT NULL,
+  `stockId` varchar(10) DEFAULT NULL,
+  `amount` float DEFAULT NULL,
+  `paidAmount` float DEFAULT NULL,
+  `paymentType` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
+
